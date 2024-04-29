@@ -18,6 +18,11 @@ public class CrearUsuario extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private CardLayout cardLayout;
+	 private JTextField nombre;
+	    private JTextField apellido;
+	    private JTextField fecha;
+	    private JTextField telefono;
+	    private boolean fotoSubida=false;
 
 
 	/**
@@ -54,32 +59,32 @@ public class CrearUsuario extends JPanel {
 		lblNewLabel_4.setBounds(20, 297, 99, 25);
 		add(lblNewLabel_4);
 
-		JLabel lblNewLabel_5 = new JLabel("telefono:");
+		JLabel lblNewLabel_5 = new JLabel("Total:");
 		lblNewLabel_5.setFont(new Font("Tw Cen MT", Font.PLAIN, 21));
 		lblNewLabel_5.setBounds(24, 355, 111, 43);
 		add(lblNewLabel_5);
 
 
-	    JTextField nombre = new JTextField();
-	    nombre.setBounds(134, 91, 211, 34);
+	     nombre = new JTextField();
+	    nombre.setBounds(134, 91, 173, 34);
 	    add(nombre);
 
-	    JTextField apellido = new JTextField();
+	     apellido = new JTextField();
 	    
-	    apellido.setBounds(134, 157, 211, 31);
+	    apellido.setBounds(134, 157, 173, 31);
 	    add(apellido);
 
-	    JTextField fecha = new JTextField();
+	     fecha = new JTextField();
 	    
 	    fecha.setBounds(203, 217, 141, 34);
 	    add(fecha);
 
-	    JTextField telefono = new JTextField();
-	    telefono.setBounds(126, 296, 219, 34);
+	     telefono = new JTextField();
+	    telefono.setBounds(126, 296, 99, 34);
 	    add(telefono);
 
-	    JTextField total = new JTextField();
-	    total.setBounds(123, 363, 222, 34);
+	    JLabel total = new JLabel(" $ 290");
+	    total.setBounds(85, 362, 222, 34);
 	    add(total);
 		
 	    JButton btnNewButton = new JButton("Guardar");
@@ -111,13 +116,12 @@ public class CrearUsuario extends JPanel {
 	                telefono.setBorder(new LineBorder(Color.GREEN, 2));
 	            }
 
-	            if (total.getText().isEmpty()) {
-	                total.setBorder(new LineBorder(Color.RED, 2));
-	            } else {
-	                total.setBorder(new LineBorder(Color.GREEN, 2));
-	            }
-
-	            cardLayout.show(contentPane, "Clientes");
+	          
+	            cardLayout.show(contentPane, "Menu");
+	           
+	            
+               
+	           
 	        }
 	    });
 	    btnNewButton.setBounds(253, 443, 85, 21);
@@ -125,13 +129,17 @@ public class CrearUsuario extends JPanel {
 	    
 	    JLabel img = new JLabel("");
 		img.setIcon(new ImageIcon(Menu.class.getResource("/imagenes/guardar.png")));
-		img.setLocation(60, 432);
+		img.setLocation(55, 432);
 		img.setSize(40, 40);
 		add(img);
 	    
 	    JButton btnNewButton_1 = new JButton("Subir foto");
 	    btnNewButton_1.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
+	    		fotoSubida=false;
+	    		cardLayout.show(contentPane,"SubirFoto");
+	    		fotoSubida=true;
+	    		foto();
 	    	}
 	    });
 	    btnNewButton_1.setBounds(53, 443, 95, 21);
@@ -151,10 +159,33 @@ public class CrearUsuario extends JPanel {
 	    lblNewLabel.setBackground(new Color(233, 155, 24));
 	    lblNewLabel.setFont(new Font("Snap ITC", Font.PLAIN, 31));
 	    
-	    JButton btnNewButton_2 = new JButton("Eliminar");
-	    btnNewButton_2.setBounds(158, 443, 85, 21);
-	    add(btnNewButton_2);
+	    JPanel panel_1 = new JPanel();
+	    panel_1.setBounds(341, 92, 63, 56);
+	    add(panel_1);
+	    
+	   
+	    JLabel img2= new JLabel();
+	    panel_1.add(img2);
+	    img2.setIcon(new ImageIcon(SubirFoto.class.getResource("/imagenes/foto.png")));
+	    
+	    JLabel lblNewLabel_7 = new JLabel("Foto");
+	    lblNewLabel_7.setFont(new Font("Tw Cen MT", Font.PLAIN, 21));
+	    lblNewLabel_7.setBounds(351, 163, 45, 13);
+	    add(lblNewLabel_7);
+	    
+	    
 
+	    }
+	
+	private void foto() {
+		if(fotoSubida) {
+	JLabel lblNewLabel_6 = new JLabel("Foto");
+	lblNewLabel_6.setFont(new Font("Tw Cen MT", Font.PLAIN, 21));
+	lblNewLabel_6.setBounds(351, 157, 45, 13);
+	add(lblNewLabel_6);
+	}
+	}
 	}
 
-}
+
+

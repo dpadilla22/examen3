@@ -57,6 +57,11 @@ public class Menu extends JPanel {
 		panel.add(btnNewButton);
 
 		JButton btnNewButton_1 = new JButton("Tarifas");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cardLayout.show(contentPane, "Tarifa");
+			}
+		});
 		btnNewButton_1.setBackground(new Color(0, 64, 128));
 		btnNewButton_1.setBounds(231, 295, 128, 34);
 		panel.add(btnNewButton_1);
@@ -68,6 +73,16 @@ public class Menu extends JPanel {
 		});
 		btnNewButton_2.setBounds(236, 385, 123, 34);
 		panel.add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("Cerrar sesion");
+		btnNewButton_3.setBackground(new Color(128, 128, 255));
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cardLayout.show(contentPane, "Inicio");
+			}
+		});
+		btnNewButton_3.setBounds(287, 463, 113, 21);
+		panel.add(btnNewButton_3);
 
 	}
 }

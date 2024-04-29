@@ -85,14 +85,25 @@ public class Gimnasio extends JFrame {
 		Clientes clientesPanel = new Clientes(contentPane);
 		Cliente clientePane = new Cliente(contentPane);
 		CrearUsuario crearUsuarioPane = new CrearUsuario(contentPane);
+		SubirFoto subirFotoPane = new SubirFoto(contentPane);
+		Tarifa tarifaPane= new Tarifa(contentPane);
+		CrearTarifa crearTarifaPane= new CrearTarifa(contentPane);
+		EditarTarifa editarTarifaPane= new EditarTarifa(contentPane);
+		ConsultarTarifa consultarTarifaPane= new ConsultarTarifa(contentPane);
 	
 	
-
+		
 		contentPane.add(inicioSesion, "Inicio");
 		contentPane.add(menuPanel, "Menu");
 		contentPane.add(clientesPanel, "Clientes");
 		contentPane.add(clientePane, "Cliente");
 		contentPane.add(crearUsuarioPane, "CrearUsuario");
+		contentPane.add(subirFotoPane, "SubirFoto");
+		contentPane.add(tarifaPane, "Tarifa");
+		contentPane.add(crearTarifaPane,"CrearTarifa");
+		contentPane.add(editarTarifaPane,"EditarTarifa");
+		contentPane.add(consultarTarifaPane,"ConsultarTarifa");
+
 	}
 
 	public void showInicioPanel() {
@@ -114,6 +125,21 @@ public class Gimnasio extends JFrame {
 	public void showCrearUsuario() {
 	    cardLayout.show(contentPane, "CrearUsuario");
 	}
+	public void showSubirFoto() {
+		cardLayout.show(contentPane, "SubirFoto");
+	}
+	public void Tarifapane() {
+		cardLayout.show(contentPane, "Tarifa");
+	}
+	public void CrearTarifaPane() {
+		cardLayout.show(contentPane, "CrearTarifa");
+	}
 	
-
+	public void EditarTarifaPane() {
+		cardLayout.show(contentPane, "EditarTarifa");
+	}
+	
+	public void ConsultarTarifaPane() {
+		cardLayout.show(contentPane, "ConsultarTarifa");
+	}
 }

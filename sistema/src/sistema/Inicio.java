@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -63,7 +64,20 @@ public class Inicio extends JPanel {
 		JButton btnNewButton = new JButton("Ingresar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				 String username = textField.getText();
+	              String password = new String(passwordField.getPassword());
+	              
+	              if(username.isEmpty()|| password.isEmpty()) {
+	            	  JOptionPane.showMessageDialog(null, "debe llenar todos los espacios", "Error", JOptionPane.INFORMATION_MESSAGE);
+	              }else {
+				JOptionPane.showMessageDialog(null, "registro exitoso", "Success", JOptionPane.INFORMATION_MESSAGE);
 				cardLayout.show(contentPane, "Menu");
+				 textField.setText("");
+                 passwordField.setText(null);
+			
+				}
+	             
 
 			}
 		});
