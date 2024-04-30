@@ -47,7 +47,7 @@ public class Clientes extends JPanel {
 		panel_1.add(img);
 		img.setIcon(new ImageIcon(Menu.class.getResource("/imagenes/rata2.png")));
 
-		JLabel lblNewLabel = new JLabel("Rata GYM");
+		JLabel lblNewLabel = new JLabel("GYM rat");
 		panel_1.add(lblNewLabel);
 		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setFont(new Font("Unispace", Font.PLAIN, 30));
@@ -57,7 +57,7 @@ public class Clientes extends JPanel {
 		    public void actionPerformed(ActionEvent e) {
 		    }
 		});
-		btnNewButton.setBounds(160, 206, 133, 43);
+		btnNewButton.setBounds(160, 207, 133, 43);
 		panel.add(btnNewButton);
 
 		JButton btnNewButton_1 = new JButton("Crear");

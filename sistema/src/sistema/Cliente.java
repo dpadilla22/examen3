@@ -14,7 +14,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class Cliente extends JPanel {
-
+//crear
     private static final long serialVersionUID = 1L;
 
     private JPanel contentPane;
@@ -23,7 +23,7 @@ public class Cliente extends JPanel {
     private JTextField apellidoField;
     private JTextField fechaField;
     private JTextField telefonoField;
-
+    private boolean fotoSubida=false;
     /**
      * Create the panel.
      */
@@ -106,7 +106,9 @@ public class Cliente extends JPanel {
         JButton btnNewButton_1 = new JButton("Subir foto");
         btnNewButton_1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                cardlayout.show(contentPane, "crearUusario");
+                cardlayout.show(contentPane, "SubirFoto");
+                fotoSubida=true;
+	    		foto();
             }
         });
         btnNewButton_1.setBounds(53, 443, 95, 21);
@@ -126,9 +128,28 @@ public class Cliente extends JPanel {
         lblNewLabel.setFont(new Font("Snap ITC", Font.PLAIN, 31));
 
         JButton btnNewButton_2 = new JButton("Eliminar");
+        btnNewButton_2.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		nombreField.setText("");
+        		apellidoField.setText("");
+        		fechaField.setText("");
+        		telefonoField.setText("");
+        	}
+        });
         btnNewButton_2.setBounds(158, 443, 85, 21);
         add(btnNewButton_2);
+    }
+    private void foto() {
+        if(fotoSubida) {
+            JLabel img2 = new JLabel();
+            img2.setBounds(351, 200, 100, 100); 
+            add(img2);
+            img2.setIcon(new ImageIcon(CrearUsuario.class.getResource("/imagenes/ratita.png")));
+            
+            repaint();
+        }
     }
 
 
 }
+

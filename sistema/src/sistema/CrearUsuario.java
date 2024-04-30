@@ -12,7 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
-
+//editar
 public class CrearUsuario extends JPanel {
 
 	private static final long serialVersionUID = 1L;
@@ -127,6 +127,7 @@ public class CrearUsuario extends JPanel {
 	    btnNewButton.setBounds(253, 443, 85, 21);
 	    add(btnNewButton);
 	    
+	    
 	    JLabel img = new JLabel("");
 		img.setIcon(new ImageIcon(Menu.class.getResource("/imagenes/guardar.png")));
 		img.setLocation(55, 432);
@@ -164,14 +165,24 @@ public class CrearUsuario extends JPanel {
 	    add(panel_1);
 	    
 	   
-	    JLabel img2= new JLabel();
-	    panel_1.add(img2);
-	    img2.setIcon(new ImageIcon(SubirFoto.class.getResource("/imagenes/foto.png")));
+	  
 	    
 	    JLabel lblNewLabel_7 = new JLabel("Foto");
 	    lblNewLabel_7.setFont(new Font("Tw Cen MT", Font.PLAIN, 21));
 	    lblNewLabel_7.setBounds(351, 163, 45, 13);
 	    add(lblNewLabel_7);
+	    
+	    JButton btnNewButton_2 = new JButton("Eliminar");
+	    btnNewButton_2.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		nombre.setText("");
+        		apellido.setText("");
+        		fecha.setText("");
+        		telefono.setText("");
+	    	}
+	    });
+	    btnNewButton_2.setBounds(158, 443, 85, 21);
+	    add(btnNewButton_2);
 	    
 	    
 
@@ -179,10 +190,9 @@ public class CrearUsuario extends JPanel {
 	
 	private void foto() {
 		if(fotoSubida) {
-	JLabel lblNewLabel_6 = new JLabel("Foto");
-	lblNewLabel_6.setFont(new Font("Tw Cen MT", Font.PLAIN, 21));
-	lblNewLabel_6.setBounds(351, 157, 45, 13);
-	add(lblNewLabel_6);
+			  JLabel img2= new JLabel();
+			    add(img2);
+			    img2.setIcon(new ImageIcon(CrearUsuario.class.getResource("/imagenes/ratita.png")));
 	}
 	}
 	}

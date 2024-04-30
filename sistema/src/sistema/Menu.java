@@ -27,62 +27,71 @@ public class Menu extends JPanel {
 		cardLayout = (CardLayout) cambio.getLayout();
 
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(255, 128, 0));
-		panel.setBounds(0, 0, 456, 583);
+		panel.setBackground(new Color(100, 91, 176));
+		panel.setBounds(0, 0, 456, 593);
 		add(panel);
 		panel.setLayout(null);
 
 		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(0, 0, 0));
-		panel_1.setBounds(0, 0, 456, 121);
+		panel_1.setBackground(new Color(238, 193, 111));
+		panel_1.setBounds(0, 0, 125, 593);
 		panel.add(panel_1);
-
-		JLabel img = new JLabel("");
-		panel_1.add(img);
-		img.setIcon(new ImageIcon(Menu.class.getResource("/imagenes/rata2.png")));
-
-		JLabel lblNewLabel = new JLabel("Rata GYM");
-		panel_1.add(lblNewLabel);
-		lblNewLabel.setForeground(new Color(255, 255, 255));
-		lblNewLabel.setFont(new Font("Unispace", Font.PLAIN, 30));
+		panel_1.setLayout(null);
 
 		JButton btnNewButton = new JButton("Clientes");
+		btnNewButton.setFont(new Font("Unispace", Font.PLAIN, 18));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cardLayout.show(contentPane, "Clientes");
 			}
 		});
-		btnNewButton.setBackground(new Color(0, 64, 128));
-		btnNewButton.setBounds(233, 206, 126, 34);
+		btnNewButton.setBackground(new Color(238, 193, 111));
+		btnNewButton.setBounds(219, 113, 161, 34);
 		panel.add(btnNewButton);
 
 		JButton btnNewButton_1 = new JButton("Tarifas");
+		btnNewButton_1.setFont(new Font("Unispace", Font.PLAIN, 18));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cardLayout.show(contentPane, "Tarifa");
 			}
 		});
-		btnNewButton_1.setBackground(new Color(0, 64, 128));
-		btnNewButton_1.setBounds(231, 295, 128, 34);
+		btnNewButton_1.setBackground(new Color(238, 193, 111));
+		btnNewButton_1.setBounds(219, 230, 161, 34);
 		panel.add(btnNewButton_1);
 
 		JButton btnNewButton_2 = new JButton("Checador");
+		btnNewButton_2.setFont(new Font("Unispace", Font.PLAIN, 18));
+		btnNewButton_2.setBackground(new Color(238, 193, 111));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_2.setBounds(236, 385, 123, 34);
+		btnNewButton_2.setBounds(219, 348, 161, 34);
 		panel.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Cerrar sesion");
-		btnNewButton_3.setBackground(new Color(128, 128, 255));
+		btnNewButton_3.setFont(new Font("Unispace", Font.PLAIN, 14));
+		btnNewButton_3.setBackground(new Color(238, 193, 111));
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cardLayout.show(contentPane, "Inicio");
 			}
 		});
-		btnNewButton_3.setBounds(287, 463, 113, 21);
+		btnNewButton_3.setBounds(219, 454, 161, 34);
 		panel.add(btnNewButton_3);
+		
+		JLabel img3 = new JLabel("");
+		img3.setBounds(219, 0, 139, 126);
+		panel.add(img3);
+		img3.setFont(new Font("Bodoni MT Poster Compressed", Font.PLAIN, 10));
+		img3.setIcon(new ImageIcon(Menu.class.getResource("/imagenes/gym.png")));
+		
+		JLabel img2 = new JLabel("");
+		img2.setBounds(229, 136, 139, 126);
+		panel.add(img2);
+		img2.setFont(new Font("Bodoni MT Poster Compressed", Font.PLAIN, 10));
+		img2.setIcon(new ImageIcon(Menu.class.getResource("/imagenes/dinero.png")));
 
 	}
 }

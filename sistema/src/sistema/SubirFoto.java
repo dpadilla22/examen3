@@ -40,7 +40,7 @@ public class SubirFoto extends JPanel {
 		JLabel img= new JLabel();
 		img.setBounds(48, 35, 40, 40);
 		panel_1.add(img);
-		img.setIcon(new ImageIcon(SubirFoto.class.getResource("/imagenes/foto.png")));
+		img.setIcon(new ImageIcon(SubirFoto.class.getResource("/imagenes/ratita.png")));
 		
 		JLabel lblNewLabel = new JLabel("Subiendo foto...");
 		lblNewLabel.setFont(new Font("Tw Cen MT", Font.PLAIN, 21));

@@ -43,7 +43,7 @@ public class Tarifa extends JPanel {
 		panel_1.add(img);
 		img.setIcon(new ImageIcon(Tarifa.class.getResource("/imagenes/rata2.png")));
 		
-		JLabel lblNewLabel = new JLabel("Rata GYM");
+		JLabel lblNewLabel = new JLabel("GYM rat");
 		lblNewLabel.setBounds(177, 32, 220, 46);
 		panel_1.add(lblNewLabel);
 		lblNewLabel.setForeground(new Color(255, 255, 255));
@@ -68,7 +68,7 @@ public class Tarifa extends JPanel {
 				 
 			
 			}});
-		btnNewButton_1.setBounds(170, 261, 113, 40);
+		btnNewButton_1.setBounds(170, 285, 113, 40);
 		panel.add(btnNewButton_1);
 
 		JButton btnNewButton_2 = new JButton("Editar");
@@ -79,7 +79,7 @@ public class Tarifa extends JPanel {
 			        		
 			}
 		});
-		btnNewButton_2.setBounds(170, 311, 113, 40);
+		btnNewButton_2.setBounds(170, 362, 113, 40);
 		panel.add(btnNewButton_2);
 		
 		
