@@ -9,21 +9,23 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
+import javax.swing.JComboBox;
+
 //editar
 public class CrearUsuario extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private CardLayout cardLayout;
-	 private JTextField nombre;
-	    private JTextField apellido;
-	    private JTextField fecha;
-	    private JTextField telefono;
-	    private boolean fotoSubida=false;
-
+	private JTextField nombre;
+	private JTextField apellido;
+	private JTextField fecha;
+	private JTextField telefono;
+	private boolean fotoSubida = false;
 
 	/**
 	 * Create the panel.
@@ -31,13 +33,22 @@ public class CrearUsuario extends JPanel {
 	public CrearUsuario(JPanel cambio) {
 		setLayout(null);
 
-		setBackground(new Color(251, 175, 106));
+		setBackground(new Color(100, 91, 176));
 		setBounds(0, 0, 430, 520);
 		setLayout(null);
 
-
 		contentPane = cambio;
 		cardLayout = (CardLayout) cambio.getLayout();
+
+		JLabel img2 = new JLabel();
+		img2.setBounds(317, 91, 100, 100);
+		img2.setIcon(new ImageIcon(CrearUsuario.class.getResource("/imagenes/foto.jpg")));
+		add(img2);
+
+		JLabel txt = new JLabel("Foto");
+		txt.setFont(new Font("Unispace", Font.PLAIN, 15));
+		txt.setBounds(357, 197, 47, 20);
+		add(txt);
 
 		JLabel lblNewLabel_1 = new JLabel("Nombres:");
 		lblNewLabel_1.setFont(new Font("Tw Cen MT", Font.PLAIN, 21));
@@ -64,138 +75,94 @@ public class CrearUsuario extends JPanel {
 		lblNewLabel_5.setBounds(24, 355, 111, 43);
 		add(lblNewLabel_5);
 
+		nombre = new JTextField("Alexander");
+		nombre.setFont(new Font("Tw Cen MT", Font.PLAIN, 15));
+		nombre.setOpaque(false);
+		nombre.setBounds(116, 102, 173, 20);
+		add(nombre);
 
-	     nombre = new JTextField();
-	    nombre.setBounds(134, 91, 173, 34);
-	    add(nombre);
+		apellido = new JTextField("Miranda Aguilar");
+		apellido.setFont(new Font("Tw Cen MT", Font.PLAIN, 15));
+		apellido.setOpaque(false);
+		apellido.setBounds(134, 157, 173, 20);
+		add(apellido);
 
-	     apellido = new JTextField();
-	    
-	    apellido.setBounds(134, 157, 173, 31);
-	    add(apellido);
+		fecha = new JTextField("24/12/02");
+		fecha.setFont(new Font("Tw Cen MT", Font.PLAIN, 15));
+		fecha.setOpaque(false);
+		fecha.setBounds(210, 225, 141, 25);
+		add(fecha);
 
-	     fecha = new JTextField();
-	    
-	    fecha.setBounds(203, 217, 141, 34);
-	    add(fecha);
+		telefono = new JTextField("6151139646");
+		telefono.setFont(new Font("Tw Cen MT", Font.PLAIN, 15));
+		telefono.setOpaque(false);
+		telefono.setBounds(116, 296, 99, 20);
+		add(telefono);
 
-	     telefono = new JTextField();
-	    telefono.setBounds(126, 296, 99, 34);
-	    add(telefono);
+		JButton btnNewButton = new JButton("Guardar");
+		btnNewButton.setFont(new Font("Unispace", Font.PLAIN, 15));
+		btnNewButton.setBackground(new Color(238, 193, 111));
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (telefono.getText().matches(".*[a-zA-Z].*")) {
+					telefono.setBorder(new LineBorder(Color.RED, 2));
+					JOptionPane.showMessageDialog(null, "No se aceptan letras ", null, JOptionPane.INFORMATION_MESSAGE);
+					
+				} else if (nombre.getText().isEmpty() || apellido.getText().isEmpty() || fecha.getText().isEmpty()
+						|| telefono.getText().isEmpty()) {
+					JOptionPane.showMessageDialog(null, "No puede tener campos vacíos", null,JOptionPane.INFORMATION_MESSAGE);
+					
+				} else {
+					cardLayout.show(contentPane, "Menu");
+				}
 
-	    JLabel total = new JLabel(" $ 290");
-	    total.setBounds(85, 362, 222, 34);
-	    add(total);
-		
-	    JButton btnNewButton = new JButton("Guardar");
-	    btnNewButton.addActionListener(new ActionListener() {
-	        public void actionPerformed(ActionEvent e) {
-	            System.out.println("Nombre: " + nombre.getText().length());
+			}
 
-	            if (nombre.getText().isEmpty()) {
-	                nombre.setBorder(new LineBorder(Color.RED, 2));
-	            } else {
-	                nombre.setBorder(new LineBorder(Color.GREEN, 2));
-	            }
+		});
+		btnNewButton.setOpaque(false);
+		btnNewButton.setBounds(235, 443, 103, 21);
+		add(btnNewButton);
 
-	            if (apellido.getText().isEmpty()) {
-	                apellido.setBorder(new LineBorder(Color.RED, 2));
-	            } else {
-	                apellido.setBorder(new LineBorder(Color.GREEN, 2));
-	            }
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(238, 193, 111));
+		panel.setBounds(0, 0, 430, 81);
+		add(panel);
+		panel.setLayout(null);
 
-	            if (fecha.getText().isEmpty()) {
-	                fecha.setBorder(new LineBorder(Color.RED, 2));
-	            } else {
-	                fecha.setBorder(new LineBorder(Color.GREEN, 2));
-	            }
+		JLabel lblNewLabel = new JLabel("Cliente");
+		lblNewLabel.setForeground(new Color(0, 0, 0));
+		lblNewLabel.setBounds(153, 21, 131, 35);
+		panel.add(lblNewLabel);
+		lblNewLabel.setBackground(new Color(233, 155, 24));
+		lblNewLabel.setFont(new Font("Showcard Gothic", Font.PLAIN, 31));
 
-	            if (telefono.getText().isEmpty()) {
-	                telefono.setBorder(new LineBorder(Color.RED, 2));
-	            } else {
-	                telefono.setBorder(new LineBorder(Color.GREEN, 2));
-	            }
+		JLabel lblNewLabel_7 = new JLabel("Foto");
+		lblNewLabel_7.setFont(new Font("Tw Cen MT", Font.PLAIN, 21));
+		lblNewLabel_7.setBounds(351, 163, 45, 13);
+		add(lblNewLabel_7);
 
-	          
-	            cardLayout.show(contentPane, "Menu");
-	           
-	            
-               
-	           
-	        }
-	    });
-	    btnNewButton.setBounds(253, 443, 85, 21);
-	    add(btnNewButton);
-	    
-	    
-	    JLabel img = new JLabel("");
-		img.setIcon(new ImageIcon(Menu.class.getResource("/imagenes/guardar.png")));
-		img.setLocation(55, 432);
-		img.setSize(40, 40);
-		add(img);
-	    
-	    JButton btnNewButton_1 = new JButton("Subir foto");
-	    btnNewButton_1.addActionListener(new ActionListener() {
-	    	public void actionPerformed(ActionEvent e) {
-	    		fotoSubida=false;
-	    		cardLayout.show(contentPane,"SubirFoto");
-	    		fotoSubida=true;
-	    		foto();
-	    	}
-	    });
-	    btnNewButton_1.setBounds(53, 443, 95, 21);
-	    add(btnNewButton_1);
-	    
-	    JPanel panel = new JPanel();
-	    panel.setBackground(new Color(0, 0, 0));
-	    panel.setBounds(0, 0, 430, 81);
-	    add(panel);
-	    panel.setLayout(null);
-	    
-	    
-	    JLabel lblNewLabel = new JLabel("Cliente");
-	    lblNewLabel.setForeground(new Color(255, 255, 255));
-	    lblNewLabel.setBounds(153, 21, 131, 35);
-	    panel.add(lblNewLabel);
-	    lblNewLabel.setBackground(new Color(233, 155, 24));
-	    lblNewLabel.setFont(new Font("Snap ITC", Font.PLAIN, 31));
-	    
-	    JPanel panel_1 = new JPanel();
-	    panel_1.setBounds(341, 92, 63, 56);
-	    add(panel_1);
-	    
-	   
-	  
-	    
-	    JLabel lblNewLabel_7 = new JLabel("Foto");
-	    lblNewLabel_7.setFont(new Font("Tw Cen MT", Font.PLAIN, 21));
-	    lblNewLabel_7.setBounds(351, 163, 45, 13);
-	    add(lblNewLabel_7);
-	    
-	    JButton btnNewButton_2 = new JButton("Eliminar");
-	    btnNewButton_2.addActionListener(new ActionListener() {
-	    	public void actionPerformed(ActionEvent e) {
-	    		nombre.setText("");
-        		apellido.setText("");
-        		fecha.setText("");
-        		telefono.setText("");
-	    	}
-	    });
-	    btnNewButton_2.setBounds(158, 443, 85, 21);
-	    add(btnNewButton_2);
-	    
-	    
+		JButton btnNewButton_2 = new JButton("Eliminar");
+		btnNewButton_2.setFont(new Font("Unispace", Font.PLAIN, 15));
+		btnNewButton_2.setBackground(new Color(238, 193, 111));
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				nombre.setText("");
+				apellido.setText("");
+				fecha.setText("");
+				telefono.setText("");
+			}
+		});
+		btnNewButton_2.setOpaque(false);
+		btnNewButton_2.setBounds(90, 443, 111, 21);
+		add(btnNewButton_2);
 
-	    }
-	
-	private void foto() {
-		if(fotoSubida) {
-			  JLabel img2= new JLabel();
-			    add(img2);
-			    img2.setIcon(new ImageIcon(CrearUsuario.class.getResource("/imagenes/ratita.png")));
+		String paquetes[] = { "General $200", "Plus $300", "Golden $450" };
+		JComboBox comboBox = new JComboBox(paquetes);
+		comboBox.setFont(new Font("Tw Cen MT", Font.PLAIN, 15));
+		comboBox.setBackground(new Color(238, 193, 111));
+		comboBox.setOpaque(false);
+		comboBox.setBounds(116, 369, 121, 21);
+		add(comboBox);
+
 	}
-	}
-	}
-
-
-
+}

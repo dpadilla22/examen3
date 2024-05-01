@@ -21,6 +21,8 @@ public class Inicio extends JPanel {
 	private CardLayout cardLayout;
 
 	private static final long serialVersionUID = 1L;
+	String contraseña= "alex2211";
+	String usuario= "alexM";
 
 	/**
 	 * Create the panel.
@@ -63,6 +65,9 @@ public class Inicio extends JPanel {
 		add(lblNewLabel_1);
 
 		JTextField textField = new JTextField();
+		textField.setFont(new Font("Tw Cen MT", Font.PLAIN, 19));
+		textField.setForeground(new Color(0, 0, 0));
+		textField.setOpaque(false);
 		textField.setBounds(118, 212, 185, 31);
 		add(textField);
 		textField.setColumns(2);
@@ -74,6 +79,9 @@ public class Inicio extends JPanel {
 		add(lblNewLabel_2);
 
 		JPasswordField passwordField = new JPasswordField();
+		passwordField.setFont(new Font("Tw Cen MT", Font.PLAIN, 19));
+		passwordField.setForeground(new Color(0, 0, 0));
+		passwordField.setOpaque(false);
 		passwordField.setColumns(2);
 		passwordField.setBounds(118, 321, 181, 31);
 		add(passwordField);
@@ -82,24 +90,27 @@ public class Inicio extends JPanel {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				 String username = textField.getText();
+				 String user = textField.getText();
 	              String password = new String(passwordField.getPassword());
 	              
-	              if(username.isEmpty()|| password.isEmpty()) {
-	            	  JOptionPane.showMessageDialog(null, "Debe llenar todos los espacios", "Error", JOptionPane.INFORMATION_MESSAGE);
-	              }else {
-				JOptionPane.showMessageDialog(null, "registro exitoso", "Success", JOptionPane.INFORMATION_MESSAGE);
-				cardLayout.show(contentPane, "Menu");
-				 textField.setText("");
-                 passwordField.setText(null);
-			
-				}
+	              if (user.isEmpty() || password.isEmpty()) {
+	            	    JOptionPane.showMessageDialog(null, "Debe llenar todos los espacios", "Error", JOptionPane.INFORMATION_MESSAGE);
+	            	} else if (user.equals(usuario) && password.equals(contraseña)) {
+	            	    JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso", "Success", JOptionPane.INFORMATION_MESSAGE);
+	            	    cardLayout.show(contentPane, "Menu");
+	            	    textField.setText("");
+	            	    passwordField.setText(null);
+	            	} else {
+	            	    JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecta", "Error", JOptionPane.INFORMATION_MESSAGE);
+	            	}
+			}
 	             
 
-			}
+			
 		});
+		btnNewButton.setOpaque(false);
 		btnNewButton.setBackground(new Color(238, 193, 111));
-		btnNewButton.setFont(new Font("Tw Cen MT", Font.PLAIN, 10));
+		btnNewButton.setFont(new Font("Unispace", Font.PLAIN, 16));
 		btnNewButton.setBounds(149, 391, 126, 31);
 		add(btnNewButton);
 	}

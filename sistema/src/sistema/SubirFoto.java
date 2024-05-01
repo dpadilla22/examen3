@@ -27,35 +27,37 @@ public class SubirFoto extends JPanel {
 		cardlayout = (CardLayout) cambio.getLayout();
 		
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(92, 167, 211));
+		panel.setBackground(new Color(100, 91, 176));
 		panel.setBounds(10, 10, 430, 556);
 		add(panel);
 		panel.setLayout(null);
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(153, 188, 140, 114);
-		panel.add(panel_1);
-		panel_1.setLayout(null);
-		
-		JLabel img= new JLabel();
-		img.setBounds(48, 35, 40, 40);
-		panel_1.add(img);
-		img.setIcon(new ImageIcon(SubirFoto.class.getResource("/imagenes/ratita.png")));
-		
 		JLabel lblNewLabel = new JLabel("Subiendo foto...");
 		lblNewLabel.setFont(new Font("Tw Cen MT", Font.PLAIN, 21));
-		lblNewLabel.setBounds(153, 333, 175, 39);
+		lblNewLabel.setBounds(144, 312, 175, 39);
 		panel.add(lblNewLabel);
 		
 		JButton btnNewButton = new JButton("OK");
+		btnNewButton.setFont(new Font("Unispace", Font.PLAIN, 17));
+		btnNewButton.setBackground(new Color(238, 193, 111));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				cardlayout.show(contentPane,"CrearUsuario");
+				cardlayout.show(contentPane,"Cliente");
 			}
 		});
 		btnNewButton.setBackground(new Color(255, 255, 255));
-		btnNewButton.setBounds(185, 382, 85, 21);
+		btnNewButton.setBounds(166, 361, 85, 21);
 		panel.add(btnNewButton);
+		
+		JLabel img= new JLabel();
+		img.setBounds(161, 191, 127, 115);
+		panel.add(img);
+		img.setIcon(new ImageIcon(SubirFoto.class.getResource("/imagenes/foto.jpg")));
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(156, 191, 110, 115);
+		panel_1.setBackground(new Color(238, 193, 111));
+		panel.add(panel_1);
 
 	}
 }

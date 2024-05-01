@@ -22,6 +22,7 @@ public class Gimnasio extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private CardLayout cardLayout;
+	
 
 	/**
 	 * Launch the application.
@@ -66,8 +67,9 @@ public class Gimnasio extends JFrame {
 
 		JButton btnNewButton = new JButton("Iniciar sesión");
 		btnNewButton.setBounds(125, 438, 213, 39);
+		btnNewButton.setOpaque(false);
 		panel.add(btnNewButton);
-		btnNewButton.setFont(new Font("Unispace", Font.PLAIN, 15));
+		btnNewButton.setFont(new Font("Unispace", Font.PLAIN, 18));
 		btnNewButton.setBackground(new Color(238, 193, 111));
 
 		JLabel img = new JLabel("");
@@ -102,8 +104,9 @@ public class Gimnasio extends JFrame {
 		SubirFoto subirFotoPane = new SubirFoto(contentPane);
 		Tarifa tarifaPane = new Tarifa(contentPane);
 		CrearTarifa crearTarifaPane = new CrearTarifa(contentPane);
-		EditarTarifa editarTarifaPane = new EditarTarifa(contentPane);
 		ConsultarTarifa consultarTarifaPane = new ConsultarTarifa(contentPane);
+		ConsultarCliente consultarClientePane= new ConsultarCliente(contentPane);
+		Checador checadorpane= new Checador(contentPane);
 
 		contentPane.add(inicioSesion, "Inicio");
 		contentPane.add(menuPanel, "Menu");
@@ -113,9 +116,9 @@ public class Gimnasio extends JFrame {
 		contentPane.add(subirFotoPane, "SubirFoto");
 		contentPane.add(tarifaPane, "Tarifa");
 		contentPane.add(crearTarifaPane, "CrearTarifa");
-		contentPane.add(editarTarifaPane, "EditarTarifa");
 		contentPane.add(consultarTarifaPane, "ConsultarTarifa");
-
+		contentPane.add(consultarClientePane,"ConsultarCliente");
+		contentPane.add(checadorpane,"Checador");
 	}
 
 	public void showInicioPanel() {
@@ -150,11 +153,14 @@ public class Gimnasio extends JFrame {
 		cardLayout.show(contentPane, "CrearTarifa");
 	}
 
-	public void EditarTarifaPane() {
-		cardLayout.show(contentPane, "EditarTarifa");
-	}
-
 	public void ConsultarTarifaPane() {
 		cardLayout.show(contentPane, "ConsultarTarifa");
+	}
+	
+	public void	ConsultarClientePane() {
+		cardLayout.show(contentPane, "ConsultarCliente");
+	}
+	public void	ChecadorPane() {
+		cardLayout.show(contentPane, "Checador");
 	}
 }

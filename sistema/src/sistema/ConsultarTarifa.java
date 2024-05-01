@@ -45,123 +45,133 @@ public class ConsultarTarifa extends JPanel {
 	        headerPanel.setLayout(null);
 
 	        JLabel lblNewLabel_1 = new JLabel("Tarifas");
-	        lblNewLabel_1.setBounds(10, 5, 147, 54);
+	        lblNewLabel_1.setBounds(149, 17, 166, 54);
 	        lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 	        lblNewLabel_1.setForeground(new Color(255, 255, 255));
-	        lblNewLabel_1.setFont(new Font("Arial Black", Font.PLAIN, 38));
+	        lblNewLabel_1.setFont(new Font("Showcard Gothic", Font.PLAIN, 34));
 	        headerPanel.add(lblNewLabel_1);
 
 	        JLabel lblNewLabel = new JLabel("");
 	        lblNewLabel.setIcon(new ImageIcon(ConsultarTarifa.class.getResource("/imagenes/rata2.png")));
 	        
 	        lblNewLabel.setFont(new Font("Yu Gothic Light", Font.BOLD, 34));
-	        lblNewLabel.setBounds(166, -7, 100, 100);
+	        lblNewLabel.setBounds(27, 0, 100, 100);
 	        headerPanel.add(lblNewLabel);
-
-	        JLabel lblNewLabel_1_2 = new JLabel("GYM--Rat");
-	        lblNewLabel_1_2.setBounds(205, -7, 285, 86);
-	        headerPanel.add(lblNewLabel_1_2);
-	        lblNewLabel_1_2.setHorizontalAlignment(SwingConstants.CENTER);
-	        lblNewLabel_1_2.setForeground(new Color(255, 255, 255));
-	        lblNewLabel_1_2.setFont(new Font("Arial Black", Font.PLAIN, 28));
 
 	        JLabel lblNewLabel_3 = new JLabel("Increibles Tarifas a Precios Completamente Accesibles.");
 	        lblNewLabel_3.setForeground(new Color(255, 255, 255));
 	        lblNewLabel_3.setBounds(30, 91, 407, 40);
-	        lblNewLabel_3.setFont(new Font("Arial Black", Font.ITALIC, 12));
+	        lblNewLabel_3.setFont(new Font("Unispace", Font.ITALIC, 12));
 	        panel.add(lblNewLabel_3);
 
 	        JPanel generalPanel = new JPanel();
+	        generalPanel.setForeground(new Color(0, 0, 0));
 	        generalPanel.setBounds(0, 165, 437, 128);
-	        generalPanel.setBackground(new Color(244, 198, 89));
+	        generalPanel.setBackground(new Color(100, 91, 176));
 	        panel.add(generalPanel);
 	        generalPanel.setLayout(null);
 
 	        JLabel lblNewLabel_1_1 = new JLabel("GENERAL");
-	        lblNewLabel_1_1.setBackground(new Color(5, 139, 211));
+	        lblNewLabel_1_1.setBackground(new Color(255, 255, 255));
 	        lblNewLabel_1_1.setOpaque(true);
 	        lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 	        lblNewLabel_1_1.setForeground(Color.BLACK);
-	        lblNewLabel_1_1.setFont(new Font("Arial", Font.BOLD, 16));
+	        lblNewLabel_1_1.setFont(new Font("Unispace", Font.BOLD, 16));
 	        lblNewLabel_1_1.setBounds(0, 0, 130, 40);
 	        generalPanel.add(lblNewLabel_1_1);
 	        
-	        JLabel lblNewLabel_2 = new JLabel("Lunes - Viernes               de 6 am-- 5 pm");
-	        lblNewLabel_2.setBounds(140, 16, 214, 13);
+	        JLabel lblNewLabel_2 = new JLabel("Lunes - Viernes      de 6 am-- 5 pm");
+	        lblNewLabel_2.setFont(new Font("Unispace", Font.PLAIN, 10));
+	        lblNewLabel_2.setBounds(140, 16, 269, 13);
 	        generalPanel.add(lblNewLabel_2);
 	        
 	        JLabel lblNewLabel_4 = new JLabel("Sabados - 8 am -- 4 pm");
+	        lblNewLabel_4.setFont(new Font("Unispace", Font.PLAIN, 10));
 	        lblNewLabel_4.setBounds(140, 39, 150, 13);
 	        generalPanel.add(lblNewLabel_4);
 	        
 	        JLabel lblNewLabel_5 = new JLabel("1 Mes por $200.");
+	        lblNewLabel_5.setFont(new Font("Unispace", Font.PLAIN, 10));
 	        lblNewLabel_5.setBounds(140, 62, 146, 13);
 	        generalPanel.add(lblNewLabel_5);
 
 	      
 	        JPanel plusPanel = new JPanel();
-	        plusPanel.setBounds(0, 285, 437, 118);
+	        plusPanel.setBounds(0, 285, 437, 88);
 	        plusPanel.setLayout(null);
-	        plusPanel.setBackground(new Color(216, 159, 29));
+	        plusPanel.setBackground(new Color(238, 193, 111));
 	        panel.add(plusPanel);
 
 	        JLabel lblNewLabel_1_1_1 = new JLabel("Plus+");
 	        lblNewLabel_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 	        lblNewLabel_1_1_1.setForeground(Color.BLACK);
-	        lblNewLabel_1_1_1.setBackground(new Color(5, 139, 211));
+	        lblNewLabel_1_1_1.setBackground(new Color(255, 255, 255));
 	        lblNewLabel_1_1_1.setOpaque(true);
-	        lblNewLabel_1_1_1.setFont(new Font("Arial", Font.BOLD, 16));
+	        lblNewLabel_1_1_1.setFont(new Font("Unispace", Font.BOLD, 16));
 	        lblNewLabel_1_1_1.setBounds(0, 0, 130, 40);
 	        plusPanel.add(lblNewLabel_1_1_1);
 	        
 	        JLabel lblNewLabel_6 = new JLabel("Sabados - 7 am -- 7 pm");
+	        lblNewLabel_6.setFont(new Font("Unispace", Font.PLAIN, 10));
 	        lblNewLabel_6.setBounds(140, 39, 147, 13);
 	        plusPanel.add(lblNewLabel_6);
 	        
-	        JLabel lblNewLabel_7 = new JLabel("Lunes - Viernes               de 6 am-- 7 pm");
-	        lblNewLabel_7.setBounds(140, 16, 226, 13);
+	        JLabel lblNewLabel_7 = new JLabel("Lunes - Viernes        de 6 am-- 7 pm");
+	        lblNewLabel_7.setFont(new Font("Unispace", Font.PLAIN, 10));
+	        lblNewLabel_7.setBounds(140, 16, 267, 13);
 	        plusPanel.add(lblNewLabel_7);
 	        
 	        JLabel lblNewLabel_8 = new JLabel("1 Mes por $300");
+	        lblNewLabel_8.setFont(new Font("Unispace", Font.PLAIN, 10));
 	        lblNewLabel_8.setBounds(140, 62, 137, 13);
 	        plusPanel.add(lblNewLabel_8);
 
 	      
 
 	        JPanel goldenPanel = new JPanel();
-	        goldenPanel.setBounds(0, 400, 437, 145);
+	        goldenPanel.setBounds(0, 371, 437, 145);
 	        goldenPanel.setLayout(null);
-	        goldenPanel.setBackground(new Color(255, 204, 51));
+	        goldenPanel.setBackground(new Color(0, 0, 0));
 	        panel.add(goldenPanel);
 
 	        JLabel lblNewLabel_1_1_1_1 = new JLabel("GOLDEN");
 	        lblNewLabel_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-	        lblNewLabel_1_1_1_1.setForeground(new Color(255, 255, 255));
-	        lblNewLabel_1_1_1_1.setBackground(new Color(0, 0, 0));
+	        lblNewLabel_1_1_1_1.setForeground(Color.BLACK);
+	        lblNewLabel_1_1_1_1.setBackground(new Color(255, 255, 255));
 	        lblNewLabel_1_1_1_1.setOpaque(true);
-	        lblNewLabel_1_1_1_1.setFont(new Font("Arial", Font.BOLD, 16));
-	        lblNewLabel_1_1_1_1.setBounds(0, 0, 130, 40);
+	        lblNewLabel_1_1_1_1.setFont(new Font("Unispace", Font.BOLD, 16));
+	        lblNewLabel_1_1_1_1.setBounds(0, -11, 130, 40);
 	        goldenPanel.add(lblNewLabel_1_1_1_1);
 	        
-	        JLabel lblNewLabel_9 = new JLabel("Lunes - Viernes               de 6 am-- 9 pm");
-	        lblNewLabel_9.setBounds(142, 16, 233, 13);
+	        JLabel lblNewLabel_9 = new JLabel("Lunes - Viernes       de 6 am-- 9 pm");
+	        lblNewLabel_9.setForeground(new Color(255, 255, 255));
+	        lblNewLabel_9.setFont(new Font("Unispace", Font.PLAIN, 10));
+	        lblNewLabel_9.setBounds(140, 16, 233, 13);
 	        goldenPanel.add(lblNewLabel_9);
 	        
 	        JLabel lblNewLabel_10 = new JLabel("Sabados - 7 am -- 9 pm");
-	        lblNewLabel_10.setBounds(140, 39, 149, 13);
+	        lblNewLabel_10.setForeground(new Color(255, 255, 255));
+	        lblNewLabel_10.setFont(new Font("Unispace", Font.PLAIN, 10));
+	        lblNewLabel_10.setBounds(140, 38, 149, 13);
 	        goldenPanel.add(lblNewLabel_10);
 	        
 	        JLabel lblNewLabel_11 = new JLabel("1 Mes por $450. + 1 Semana Gratuita ");
-	        lblNewLabel_11.setBounds(142, 64, 176, 13);
+	        lblNewLabel_11.setForeground(new Color(255, 255, 255));
+	        lblNewLabel_11.setFont(new Font("Unispace", Font.PLAIN, 10));
+	        lblNewLabel_11.setBounds(140, 62, 233, 13);
 	        goldenPanel.add(lblNewLabel_11);
 	        
 	        JButton btnNewButton = new JButton("OK");
+	        btnNewButton.setForeground(new Color(255, 255, 255));
+	        btnNewButton.setBackground(new Color(255, 255, 255));
+	        btnNewButton.setFont(new Font("Unispace", Font.PLAIN, 15));
 	        btnNewButton.addActionListener(new ActionListener() {
 	        	public void actionPerformed(ActionEvent e) {
 	        		cardlayout.show(contentPane, "Menu");
 	        	}
 	        });
-	        btnNewButton.setBounds(306, 80, 85, 21);
+	        btnNewButton.setOpaque(false);
+	        btnNewButton.setBounds(327, 85, 85, 21);
 	        goldenPanel.add(btnNewButton);
 
 	        
